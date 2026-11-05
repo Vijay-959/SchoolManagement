@@ -1,0 +1,440 @@
+<!-- To delete student data-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Student - EduManage Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>EduManage Portal</h1>
+          <span>Academic Management System</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="insert.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <line x1="20" y1="8" x2="20" y2="14"/>
+                <line x1="23" y1="11" x2="17" y2="11"/>
+              </svg>
+              Add Student
+            </a>
+          </li>
+          <li>
+            <a href="list.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+              </svg>
+              List Students
+            </a>
+          </li>
+          <li>
+            <a href="listOne.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              Search Student
+            </a>
+          </li>
+          <li>
+            <a href="update.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              Update Student
+            </a>
+          </li>
+          <li>
+            <a href="delete.html" class="nav-link active">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              </svg>
+              Delete Student
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Button for Mobile -->
+      <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileDrawer" class="mobile-drawer">
+      <ul class="mobile-drawer-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="insert.html" class="nav-link">Add Student</a></li>
+        <li><a href="list.html" class="nav-link">List Students</a></li>
+        <li><a href="listOne.html" class="nav-link">Search Student</a></li>
+        <li><a href="update.html" class="nav-link">Update Student</a></li>
+        <li><a href="delete.html" class="nav-link active">Delete Student</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Hero Banner with Educational Image -->
+    <section class="page-hero">
+      <div class="hero-content">
+        <span class="hero-badge badge-danger">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"/>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+          </svg>
+          Record Deletion
+        </span>
+        <h1 class="hero-title">DELETE STUDENT</h1>
+        <p class="hero-subtitle">
+          Select an existing student ID from the database dropdown to review student details before permanently deleting the record from MySQL.
+        </p>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="images/student-delete.jpg" alt="Student Record Archival">
+        <div class="hero-floating-chip">
+          <span class="status-dot"></span>
+          Safeguard Active
+        </div>
+      </div>
+    </section>
+
+    <!-- Split Layout -->
+    <div class="form-split-layout">
+
+      <!-- Form Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title" style="color: var(--danger);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            Remove Student Record
+          </h2>
+        </div>
+
+        <div class="card-body">
+
+          <!-- Dropdown of Existing Student IDs -->
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label class="form-label" for="studentSelect">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+              Select Student ID &#9660;
+            </label>
+            <select id="studentSelect" class="form-control" onchange="onStudentSelectChange()">
+              <option value="">-- Choose Existing Student from Database --</option>
+            </select>
+            <span class="form-help">Select a student to inspect their details before deletion</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 1rem; margin: 1.25rem 0;">
+            <div style="flex: 1; height: 1px; background: var(--slate-200);"></div>
+            <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--slate-400); font-weight: 800;">OR MANUAL ENTRY</span>
+            <div style="flex: 1; height: 1px; background: var(--slate-200);"></div>
+          </div>
+
+          <!-- Student Number to Delete (Original ID sno preserved) -->
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label class="form-label" for="sno">Student Number to Delete</label>
+            <div class="input-with-icon">
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                </svg>
+              </span>
+              <input 
+                type="number" 
+                id="sno" 
+                class="form-control" 
+                placeholder="Enter Student Number (e.g. 101)" 
+                oninput="onManualInput(this.value)"
+              >
+            </div>
+            <span class="form-help">This student ID will be deleted upon confirmation</span>
+          </div>
+
+          <!-- Student Information Display (Required: automatically shown when student is selected) -->
+          <div id="studentDetailSection" style="display: none; margin-bottom: 1.5rem;">
+            <div class="card" style="border: 1.5px solid var(--danger-border); background: #fffdfd; padding: 1.5rem;">
+              <div style="font-size: 0.82rem; font-weight: 800; color: var(--danger); text-transform: uppercase; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.45rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                Confirm Student to be Removed:
+              </div>
+
+              <div style="display: grid; gap: 0.75rem; font-size: 0.96rem;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--slate-200); padding-bottom: 0.5rem;">
+                  <span style="color: var(--slate-500); font-weight: 600;">Student ID:</span>
+                  <span style="font-weight: 800; color: var(--primary-700); font-family: monospace;" id="dispId">-</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--slate-200); padding-bottom: 0.5rem;">
+                  <span style="color: var(--slate-500); font-weight: 600;">Student Name:</span>
+                  <span style="font-weight: 800; color: var(--slate-900);" id="dispName">-</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding-bottom: 0.25rem;">
+                  <span style="color: var(--slate-500); font-weight: 600;">Total Marks:</span>
+                  <span style="font-weight: 800; color: var(--slate-900);" id="dispTotal">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div style="display: flex; gap: 0.85rem; margin-top: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-danger" id="btnDelete" onclick="deleteStudent()">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              </svg>
+              Delete Student
+            </button>
+
+            <button class="btn btn-secondary" onclick="location.href='index.html'">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="19" y1="12" x2="5" y2="12"/>
+                <polyline points="12 19 5 12 12 5"/>
+              </svg>
+              Home Page
+            </button>
+          </div>
+
+        </div>
+
+        <div class="card-footer">
+          <span style="font-size: 0.85rem; color: var(--slate-500);">Endpoint: <code>DELETE /students/:sno</code></span>
+          <button class="btn btn-outline-primary btn-sm" onclick="location.href='list.html'">
+            View Student List &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Caution Notice & Side Image -->
+      <div class="side-feature-card">
+        <img src="images/student-delete.jpg" alt="Student Record Archival" class="side-feature-img">
+        <div class="side-feature-body">
+          <h4 style="color: var(--danger);">Important Deletion Notice</h4>
+          <p>
+            Deleting a student is an irreversible administrative action. Once removed, the record cannot be recovered.
+          </p>
+
+          <ul class="side-feature-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--danger);">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              Selecting the dropdown will NEVER delete data automatically.
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--danger);">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              Deletion only occurs when clicking "Delete Student" & confirming.
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--danger);">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              The record is removed immediately from MySQL database.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <strong>EduManage Student Management Portal</strong> &bull; College & School Academic Administration
+      </div>
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <span>MySQL Connected (Port 3000)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      if (drawer) drawer.classList.toggle('open');
+    }
+
+    let studentCache = [];
+
+    // Load existing student IDs from database into dropdown
+    loadStudentDropdown();
+
+    function loadStudentDropdown() {
+      fetch("/students")
+        .then(res => res.json())
+        .then(students => {
+          studentCache = students;
+          const select = document.getElementById("studentSelect");
+          select.innerHTML = '<option value="">Select Student ID &#9660;</option>';
+          if (Array.isArray(students)) {
+            students.forEach(student => {
+              const opt = document.createElement("option");
+              opt.value = student.student_id;
+              opt.textContent = `Student ID: ${student.student_id} — ${student.student_name}`;
+              select.appendChild(opt);
+            });
+          }
+        })
+        .catch(err => console.error("Error loading students dropdown:", err));
+    }
+
+    function onStudentSelectChange() {
+      const select = document.getElementById("studentSelect");
+      const selectedId = select.value;
+      if (!selectedId) {
+        document.getElementById("studentDetailSection").style.display = "none";
+        return;
+      }
+
+      document.getElementById("sno").value = selectedId;
+      fetchAndDisplayStudent(selectedId);
+    }
+
+    function onManualInput(val) {
+      if (!val) {
+        document.getElementById("studentDetailSection").style.display = "none";
+        return;
+      }
+      const select = document.getElementById("studentSelect");
+      if (select && select.value !== val) {
+        select.value = val;
+      }
+      fetchAndDisplayStudent(val);
+    }
+
+    function fetchAndDisplayStudent(sno) {
+      const found = studentCache.find(s => String(s.student_id) === String(sno));
+      if (found) {
+        renderStudentPreview(found);
+      } else {
+        fetch("/students/" + sno)
+          .then(res => res.json())
+          .then(data => {
+            if (data.length > 0) {
+              renderStudentPreview(data[0]);
+            } else {
+              document.getElementById("studentDetailSection").style.display = "none";
+            }
+          })
+          .catch(() => {
+            document.getElementById("studentDetailSection").style.display = "none";
+          });
+      }
+    }
+
+    function renderStudentPreview(student) {
+      document.getElementById("dispId").textContent = '#' + student.student_id;
+      document.getElementById("dispName").textContent = student.student_name;
+      document.getElementById("dispTotal").textContent = student.total;
+      document.getElementById("studentDetailSection").style.display = "block";
+    }
+
+    function deleteStudent() {
+      let sno = document.getElementById("sno").value;
+
+      if (!sno) {
+        alert("Please select or enter a Student Number to delete.");
+        return;
+      }
+
+      if (confirm("Are you sure?") == false)
+        return;
+
+      const btn = document.getElementById("btnDelete");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Deleting Record...";
+      }
+
+      fetch("/students/" + sno, {
+        method: "DELETE"
+      })
+      .then(response => {
+        if (response.ok)
+          return response.text();
+
+        return response.text().then(message => {
+          throw new Error(message);
+        });
+      })
+      .then(message => {
+        alert(message);
+        location.href = "index.html";
+      })
+      .catch(error => {
+        alert(error.message);
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"/>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+            </svg>
+            Delete Student
+          `;
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!-- To list all students data -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Directory - EduManage Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>EduManage Portal</h1>
+          <span>Academic Management System</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="insert.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <line x1="20" y1="8" x2="20" y2="14"/>
+                <line x1="23" y1="11" x2="17" y2="11"/>
+              </svg>
+              Add Student
+            </a>
+          </li>
+          <li>
+            <a href="list.html" class="nav-link active">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+              </svg>
+              List Students
+            </a>
+          </li>
+          <li>
+            <a href="listOne.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              Search Student
+            </a>
+          </li>
+          <li>
+            <a href="update.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              Update Student
+            </a>
+          </li>
+          <li>
+            <a href="delete.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              </svg>
+              Delete Student
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Button for Mobile -->
+      <button class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileDrawer" class="mobile-drawer">
+      <ul class="mobile-drawer-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="insert.html" class="nav-link">Add Student</a></li>
+        <li><a href="list.html" class="nav-link active">List Students</a></li>
+        <li><a href="listOne.html" class="nav-link">Search Student</a></li>
+        <li><a href="update.html" class="nav-link">Update Student</a></li>
+        <li><a href="delete.html" class="nav-link">Delete Student</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- Hero Banner with Educational Image -->
+    <section class="page-hero">
+      <div class="hero-content">
+        <span class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+          </svg>
+          Official Academic Registry
+        </span>
+        <h1 class="hero-title">LIST OF STUDENTS</h1>
+        <p class="hero-subtitle">
+          Verified academic records from MySQL database. Displays Student Number, Full Name, Class Level, Total Score, and Academic Rating.
+        </p>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="images/students-group.jpg" alt="Students Studying Together in Classroom">
+        <div class="hero-floating-chip">
+          <span class="status-dot"></span>
+          Live Synchronized
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Card Component -->
+    <div class="table-card">
+
+      <!-- Table Toolbar -->
+      <div class="table-toolbar">
+        <!-- Live Instant Search with Clear Icon -->
+        <div class="table-search-box input-with-icon">
+          <span class="input-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </span>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="form-control" 
+            placeholder="Search by student ID, name, or marks..." 
+            oninput="filterTable()"
+          >
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+          <span id="recordBadge" class="score-badge score-mid" style="font-size: 0.85rem; padding: 0.45rem 0.95rem;">
+            Loading records...
+          </span>
+
+          <button class="btn btn-secondary btn-sm" onclick="loadStudents()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="23 4 23 10 17 10"/>
+              <polyline points="1 20 1 14 7 14"/>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+            </svg>
+            Refresh List
+          </button>
+
+          <button class="btn btn-primary btn-sm" onclick="location.href='insert.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            Add Student
+          </button>
+        </div>
+      </div>
+
+      <!-- Responsive Table Wrapper -->
+      <div class="table-responsive">
+        <table id="studentTable">
+          <thead>
+            <tr>
+              <th>Student Number</th>
+              <th>Student Name</th>
+              <th>Class</th>
+              <th>Total Marks</th>
+              <th>Performance Status</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody">
+            <!-- Dynamic rows populated from MySQL database -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Card Footer Navigation -->
+      <div class="card-footer">
+        <button class="btn btn-secondary" onclick="location.href='index.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          Home Page
+        </button>
+
+        <div style="font-size: 0.85rem; color: var(--slate-500);">
+          Endpoint: <code style="background: var(--slate-200); padding: 2px 7px; border-radius: 4px; font-weight: 600;">GET /students</code>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <strong>EduManage Student Management Portal</strong> &bull; College & School Academic Administration
+      </div>
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        <span>MySQL Connected (Port 3000)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobileDrawer');
+      if (drawer) drawer.classList.toggle('open');
+    }
+
+    let allStudents = [];
+
+    // Automatically load existing students on page load
+    loadStudents();
+
+    function loadStudents() {
+      const recordBadge = document.getElementById("recordBadge");
+      if (recordBadge) recordBadge.textContent = "Fetching...";
+
+      fetch("/students")
+        .then(response => response.json())
+        .then(data => {
+          allStudents = data;
+          renderTable(data);
+          if (recordBadge) {
+            recordBadge.textContent = `${data.length} Students Registered`;
+          }
+        })
+        .catch(err => {
+          console.error("Error loading students:", err);
+          let tbody = document.getElementById("studentTableBody");
+          if (tbody) {
+            tbody.innerHTML = `
+              <tr>
+                <td colspan="5" class="table-empty-state">
+                  <p style="color: var(--danger); font-weight: 600;">Failed to load student data. Ensure MySQL server is running.</p>
+                </td>
+              </tr>`;
+          }
+        });
+    }
+
+    function renderTable(students) {
+      let tbody = document.getElementById("studentTableBody");
+      tbody.innerHTML = "";
+
+      if (!students || students.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="5" class="table-empty-state">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <h3 style="font-size: 1.15rem; color: var(--slate-800); margin-bottom: 0.35rem;">No Student Records Found</h3>
+              <p style="font-size: 0.88rem;">No matching student data exists in the database or matches your search query.</p>
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      students.forEach(student => {
+        let scoreClass = 'score-mid';
+        let statusText = 'Average';
+        if (student.total >= 90) {
+          scoreClass = 'score-high';
+          statusText = 'Distinction';
+        } else if (student.total >= 75) {
+          scoreClass = 'score-mid';
+          statusText = 'Good';
+        } else {
+          scoreClass = 'score-low';
+          statusText = 'Needs Focus';
+        }
+
+        const classVal = (student.class !== undefined && student.class !== null) ? student.class : 'N/A';
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>
+            <span class="student-id-cell">#${student.student_id}</span>
+          </td>
+          <td>
+            <div class="student-name-cell">${student.student_name}</div>
+          </td>
+          <td>
+            <span style="font-weight: 600; color: var(--slate-600);">Class ${classVal}</span>
+          </td>
+          <td>
+            <strong style="color: var(--slate-900); font-size: 1.05rem;">${student.total}</strong>
+          </td>
+          <td>
+            <span class="score-badge ${scoreClass}">
+              <span class="status-dot" style="background-color: currentColor; box-shadow: none;"></span>
+              ${statusText} (${student.total})
+            </span>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Client-side instant filter without altering database
+    function filterTable() {
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      const badge = document.getElementById("recordBadge");
+
+      if (!query) {
+        renderTable(allStudents);
+        if (badge) badge.textContent = `${allStudents.length} Students Registered`;
+        return;
+      }
+
+      const filtered = allStudents.filter(s => {
+        const idMatch = String(s.student_id).toLowerCase().includes(query);
+        const nameMatch = (s.student_name || '').toLowerCase().includes(query);
+        const totalMatch = String(s.total).toLowerCase().includes(query);
+        const classMatch = String(s.class || '').toLowerCase().includes(query);
+        return idMatch || nameMatch || totalMatch || classMatch;
+      });
+
+      renderTable(filtered);
+      if (badge) badge.textContent = `Showing ${filtered.length} of ${allStudents.length}`;
+    }
+  </script>
+
+</body>
+</html>
